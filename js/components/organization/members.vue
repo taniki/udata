@@ -86,7 +86,10 @@
         <div class="direct-chat-msg"
             v-for="request in requests.items">
             <div class="direct-chat-info clearfix">
-                <span class="direct-chat-name pull-left">{{request.user | display}}</span>
+                <span class="direct-chat-name pull-left">
+                    <a href="{{ request.user.page }}">{{request.user | display}}</a>
+                    <span class="text-muted">{{ request.user.email }}</span>
+                </span>
                 <span class="direct-chat-timestamp pull-right">{{request.created_at | dt}}</span>
             </div>
             <img class="direct-chat-img"  :alt="_('User Image')"
